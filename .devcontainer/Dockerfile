@@ -38,6 +38,7 @@ RUN apt-get update \
 
 #can be verified in the dev container using "dotnet tool list -g"
 RUN dotnet tool install --global dotnet-ef 
+RUN dotnet tool install --global dotnet-aspnet-codegenerator
 
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=
