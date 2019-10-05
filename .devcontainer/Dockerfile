@@ -37,8 +37,10 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 #can be verified in the dev container using "dotnet tool list -g"
-RUN dotnet tool install --global dotnet-ef 
-RUN dotnet tool install --global dotnet-aspnet-codegenerator
+RUN dotnet tool install --tool-path /usr/bin dotnet-ef 
+RUN dotnet tool install --tool-path /usr/bin dotnet-aspnet-codegenerator
+
+LABEL Description="HL: dotnet tools moved to location on path"
 
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=
