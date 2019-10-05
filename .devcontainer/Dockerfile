@@ -36,5 +36,11 @@ RUN apt-get update \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
+RUN dotnet tool install --global dotnet-ef \
+    && dotnet add package Microsoft.EntityFrameworkCore.SQLite \
+    && dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design \
+    && dotnet add package Microsoft.EntityFrameworkCore.Design \
+    && dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=
