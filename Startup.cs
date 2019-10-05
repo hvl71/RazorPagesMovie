@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RazorPagesMovie.Models;
+
 
 namespace RazorPagesMovie
 {
@@ -24,6 +27,8 @@ namespace RazorPagesMovie
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddDbContext<RazorPagesMovieContext>(options =>
+            options.UseSqlite(Configuration.GetConnectionString("MovieContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
