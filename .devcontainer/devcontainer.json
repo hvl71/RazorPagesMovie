@@ -14,7 +14,7 @@
 	// "appPort": [],
 
 	// Uncomment the next line to run commands after the container is created.
-	//"postCreateCommand": "dotnet tool install --global dotnet-ef && dotnet add package Microsoft.EntityFrameworkCore.SQLite && dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design && dotnet add package Microsoft.EntityFrameworkCore.Design && dotnet add package Microsoft.EntityFrameworkCore.SqlServer",
+	"postCreateCommand": "dotnet add package Microsoft.EntityFrameworkCore.SQLite && dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design && dotnet add package Microsoft.EntityFrameworkCore.Design && dotnet add package Microsoft.EntityFrameworkCore.SqlServer",
 	
 	// Uncomment the next line to use a non-root user. On Linux, this will prevent
 	// new files getting created as root, but you may need to update the USER_UID
